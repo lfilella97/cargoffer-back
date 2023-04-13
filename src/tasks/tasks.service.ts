@@ -16,4 +16,8 @@ export class TasksService {
     const newTask = new this.taskModel(task);
     return await newTask.save();
   }
+
+  async remove(id: string): Promise<Task> {
+    return await this.taskModel.findByIdAndRemove(id);
+  }
 }
