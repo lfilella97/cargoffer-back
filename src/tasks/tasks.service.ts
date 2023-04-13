@@ -18,6 +18,6 @@ export class TasksService {
   }
 
   async remove(id: string): Promise<Task> {
-    return await this.taskModel.findByIdAndRemove(id);
+    return await this.taskModel.findByIdAndRemove(id).exec();
   }
 }
