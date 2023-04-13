@@ -15,10 +15,7 @@ export class Task {
   category: string;
 
   @Prop({ required: true })
-  due_date: Date;
-
-  @Prop({ required: true })
-  _id: string;
+  dueDate: Date;
 }
 
 export const TaskSchema = SchemaFactory.createForClass(Task);
