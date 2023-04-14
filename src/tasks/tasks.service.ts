@@ -24,4 +24,10 @@ export class TasksService {
   async findOne(id: string): Promise<Task> {
     return await this.taskModel.findById(id).exec();
   }
+
+  async update(id: string, task: Task): Promise<Task> {
+    return await this.taskModel
+      .findByIdAndUpdate(id, task, { new: true })
+      .exec();
+  }
 }
