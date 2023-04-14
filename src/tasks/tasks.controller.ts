@@ -20,4 +20,9 @@ export class TasksController {
   remove(@Param("id") id: string) {
     return this.tasksService.remove(id);
   }
+
+  @Get(":id")
+  findOne(@Param("id") id: string) {
+    return this.tasksService.findOne(id);
+  }
 }
