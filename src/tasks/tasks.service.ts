@@ -8,8 +8,8 @@ import { Model } from "mongoose";
 export class TasksService {
   constructor(@InjectModel(Task.name) private taskModel: Model<TaskDocument>) {}
 
-  async findAll(): Promise<Task[]> {
-    return await this.taskModel.find().exec();
+  async findAll(category: string): Promise<Task[]> {
+    return await this.taskModel.find(category ? { category } : null).exec();
   }
 
   async create(task: Task): Promise<Task> {
